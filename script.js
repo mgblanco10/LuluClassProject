@@ -1,6 +1,7 @@
 // Importar Three.js y GLTFLoader usando módulos ES6
 import * as THREE from 'three';
 import { GLTFLoader } from 'three/addons/loaders/GLTFLoader.js';
+import { DRACOLoader } from 'three/addons/loaders/DRACOLoader.js';
 
 console.log('✅ Script.js cargado');
 console.log('THREE disponible:', typeof THREE !== 'undefined');
@@ -210,9 +211,15 @@ document.addEventListener('DOMContentLoaded', function() {
       scene.add(light2);
       console.log('✅ Luces configuradas');
       
-      // Inicializar loader
+      // Inicializar loader con soporte para DRACO (compresión de modelos)
       loader = new GLTFLoader();
-      console.log('✅ GLTFLoader inicializado');
+      
+      // Configurar DRACOLoader para modelos comprimidos
+      const dracoLoader = new DRACOLoader();
+      dracoLoader.setDecoderPath('https://www.gstatic.com/draco/versioned/decoders/1.5.7/');
+      loader.setDRACOLoader(dracoLoader);
+      
+      console.log('✅ GLTFLoader inicializado con soporte DRACO');
       
       // Configurar interacción con mouse (rotar y mover)
       let lastX = 0;

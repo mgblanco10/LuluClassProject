@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <title>¡Soy Developer 3D!</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <h1>✨ Bienvenidos al mundo del 3D ✨</h1>
+
+  <div id="scene-container">
+    <div id="scene"></div>
+    <div id="scene-hint" style="position: absolute; bottom: 10px; left: 50%; transform: translateX(-50%); background: rgba(0,0,0,0.6); color: white; padding: 8px 15px; border-radius: 20px; font-size: 12px; pointer-events: none;">
+      🖱️ Click izquierdo: Rotar | Shift + Arrastrar: Mover
+    </div>
+  </div>
+
+  <div class="controls">
+    <label>
+      ✍️ Escribe tu nombre:
+      <input id="nameInput" placeholder="Tu nombre" />
+    </label>
+
+    <label>
+      🎨 Color del fondo:
+      <input id="colorInput" placeholder="pink, blue, #ffcc00" />
+    </label>
+
+            <label>
+              🔤 Tipo de letra:
+              <select id="fontSelect">
+                <option value="Arial">Arial</option>
+                <option value="Comic Sans MS">Comic Sans</option>
+                <option value="Courier New">Courier</option>
+                <option value="Georgia">Georgia</option>
+                <option value="Times New Roman">Times New Roman</option>
+                <option value="Verdana">Verdana</option>
+                <option value="Trebuchet MS">Trebuchet MS</option>
+                <option value="Impact">Impact</option>
+                <option value="Lucida Console">Lucida Console</option>
+                <option value="Tahoma">Tahoma</option>
+                <option value="Palatino">Palatino</option>
+                <option value="Garamond">Garamond</option>
+                <option value="Bookman">Bookman</option>
+                <option value="Helvetica">Helvetica</option>
+                <option value="Futura">Futura</option>
+              </select>
+            </label>
+
+    <label>
+      🧸 Elige tu personaje:
+      <select id="modelSelect">
+        <option value="">-- Selecciona un personaje --</option>
+        <option value="robot.glb">🤖 Robot</option>
+        <option value="star.glb">⭐ Estrella</option>
+        <option value="dog.glb">🐶 Perro</option>
+        <option value="dinosaurs.glb">🦖 Dinosaurio</option>
+        <option value="astronaut.glb">👨‍🚀 Astronauta</option>
+        <option value="thunder.glb">⚡ Rayo</option>
+        <option value="snowman.glb">☃️ Muñeco de Nieve</option>
+        <option value="house.glb">🏠 Casa</option>
+        <option value="toothbrush.glb">🪥 Cepillo de dientes</option>
+        <option value="mouse.glb">🐭 Ratón</option>
+        <option value="tiger.glb">🐅 Tigre</option>
+        <option value="monkey.glb">🐵 Mono</option>
+      </select>
+    </label>
+
+    <label>
+      🖼️ Elige el fondo:
+      <select id="backgroundSelect">
+        <option value="">-- Selecciona un fondo --</option>
+        <option value="marioKart.jpg">🎮 Mario Kart</option>
+        <option value="marvel.jpg">🦸 Marvel</option>
+        <option value="ballerinaCappucina.jpg">🩰 Bailarina</option>
+      </select>
+    </label>
+  </div>
+
+  <h2 id="nameDisplay"></h2>
+  
+  <div id="testMessage" style="color: green; font-weight: bold; margin: 10px; padding: 10px; background: rgba(255,255,255,0.8); border-radius: 5px;">
+    ✅ JavaScript está funcionando<br>
+    <small id="debugInfo" style="color: #666; font-size: 12px;">Cargando...</small>
+  </div>
+
+  <!-- Three.js con módulos ES6 (versión moderna) -->
+  <script type="importmap">
+    {
+      "imports": {
+        "three": "https://cdn.jsdelivr.net/npm/three@0.158.0/build/three.module.js",
+        "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.158.0/examples/jsm/"
+      }
+    }
+  </script>
+  <script type="module" src="script.js"></script>
+
+</body>
+</html>
